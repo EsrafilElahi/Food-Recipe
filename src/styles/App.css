@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Oi&family=Sriracha&display=swap');
+
+body {
+  background: rgb(227,117,226);
+  background: radial-gradient(circle, rgba(227,117,226,0.23853291316526615) 0%, rgba(227,244,243,0.4682247899159664) 100%);
+}
+
+.App {
+  text-align: center;
+}
+
+.header {
+  margin-top: 27px;
+  font-family: 'Bad Script', cursive;
+}
+
+.font-bad-script{
+  font-family: 'Bad Script', cursive;
+}
+
+.font-sriracha{
+  font-family: 'Sriracha', cursive;
+}
+
+.hr {
+  margin-bottom: 60px;
+
+
+box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
