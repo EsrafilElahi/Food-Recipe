@@ -13,21 +13,23 @@ const Header = () => {
   const [query, setQuery] = useState('chicken')
 
   useEffect(() => {
+
+    const getRecipes = async () => {
+      try {
+        const req = await fetch(
+          `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10&calories=591-722&health=alcohol-free`
+        )
+        const res = await req.json()
+        const data = res.hits
+        setRecipes(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
     getRecipes()
   }, [query])
 
-  const getRecipes = async () => {
-    try {
-      const req = await fetch(
-        `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10&calories=591-722&health=alcohol-free`
-      )
-      const res = await req.json()
-      const data = res.hits
-      setRecipes(data)
-    } catch (err) {
-      console.log(err)
-    }
-  }
 
   const handleSearch = e => {
     setSearch(e.target.value)
