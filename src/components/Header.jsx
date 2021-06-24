@@ -13,8 +13,8 @@ const Header = () => {
   const [query, setQuery] = useState('chicken')
 
   useEffect(() => {
-      getRecipes()
-    },[query])
+    getRecipes()
+  }, [query])
 
   const getRecipes = async () => {
     try {
