@@ -5,12 +5,6 @@ import styles from '../styles/styles.module.css'
 
 const Recipes = ({ recipes }) => {
 
-
-  const handleRemove = (id) => {
-    let rex = recipes.filter((item) => item.id !== id)
-    recipes = rex
-  }
-
   console.log(recipes)
 
 
