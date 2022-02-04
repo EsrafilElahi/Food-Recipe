@@ -4,6 +4,16 @@ import { Row, Container, Table } from 'react-bootstrap'
 import styles from '../styles/styles.module.css'
 
 const Recipes = ({ recipes }) => {
+
+
+  const handleRemove = (id) => {
+    let rex = recipes.filter((item) => item.id !== id)
+    recipes = rex
+  }
+
+  console.log(recipes)
+
+
   return (
     <Container>
       <Row>
@@ -17,17 +27,19 @@ const Recipes = ({ recipes }) => {
             </tr>
           </thead>
           <tbody>
-            {recipes.map((recipe) => (
+            {recipes.map((recipe, ind) => (
               <tr key={uuidv4()}>
-                <td key={uuidv4()} className={styles.tr}>{recipe.recipe.label}</td>
-                <td key={uuidv4()} className={styles.tr}>{recipe.recipe.calories}</td>
-                <td key={uuidv4()} className={styles.tr}>
-                  <img key={uuidv4()} src={recipe.recipe.image} alt={recipe.recipe.label} />
+                <td className={styles.tr}>{recipe.recipe.label}</td>
+                <td className={styles.tr}>{recipe.recipe.calories}</td>
+                <td className={styles.tr}>
+                  <img src={recipe.recipe.image} alt={recipe.recipe.label} />
                 </td>
                 <td className={styles.tr}>
+
                   {recipe.recipe.ingredients.map((ingredient) => (
                     <li key={uuidv4()}>{ingredient.text}</li>
                   ))}
+
                 </td>
               </tr>
             ))}
